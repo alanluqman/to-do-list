@@ -64,6 +64,7 @@ html {
   color: lightblue;
   transition: all 0.3s ease;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .header-icon {
@@ -96,13 +97,12 @@ html {
   text-decoration: line-through;
 }
 
-.moveble {
-  cursor: move;
+.trash {
   align-self: center;
 }
 
-.moveble:hover {
-  background-color: white;
+.trash:hover {
+  color: red;
 }
 
 .fa-check {

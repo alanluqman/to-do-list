@@ -1,23 +1,8 @@
 // import _ from 'lodash';
 import './style.css';
+import { addTask, display } from './crud.js';
 
-const todo = [
-  {
-    description: 'Take a shower',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'have breakfast',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'go to work',
-    completed: false,
-    index: 2,
-  },
-];
+const todo = [];
 
 const element = document.createElement('div');
 element.classList = 'todo-box';
@@ -45,14 +30,21 @@ inputHolder.classList = 'input-holder';
 form.appendChild(inputHolder);
 
 const input = document.createElement('input');
+input.id = 'input';
 input.type = 'text';
 input.placeholder = 'Add to your list...';
 input.classList = 'input';
 inputHolder.appendChild(input);
 
 const enterIcon = document.createElement('i');
+enterIcon.id = 'enter';
 enterIcon.classList = 'fa fa-level-down icon rotate';
 inputHolder.appendChild(enterIcon);
+
+enterIcon.addEventListener('click', () => {
+  addTask(todo, input.id, todoList);
+  display(todo, todoList);
+});
 
 const todoList = document.createElement('ul');
 todoList.classList = 'form';
@@ -68,18 +60,18 @@ function ifDone(arr, index) {
   return 'task';
 }
 
-for (let i = 0; i < todo.length; i += 1) {
-  const complete = check(todo, i);
-  const done = ifDone(todo, i);
+// for (let i = 0; i < todo.length; i += 1) {
+//   const complete = check(todo, i);
+//   const done = ifDone(todo, i);
 
-  const item = document.createElement('li');
-  item.classList = 'item input-holder';
-  item.innerHTML = `
-            <i class=' icon ${complete} '></i>
-            <h2 class="${done}">${todo[i].description}</h2>
-            <i class="fa fa-ellipsis-v icon moveble"></i>`;
-  todoList.appendChild(item);
-}
+//   const item = document.createElement('li');
+//   item.classList = 'item input-holder';
+//   item.innerHTML = `
+//             <i class=' icon ${complete} '></i>
+//             <h2 class="${done}">${todo[i].description}</h2>
+//             <i class="fa fa-ellipsis-v icon moveble"></i>`;
+//   todoList.appendChild(item);
+// }
 
 const footer = document.createElement('div');
 footer.classList = 'footer';
