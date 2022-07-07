@@ -15,8 +15,8 @@ export function store(arr) {
 export function reOrder(arr) {
   for (let i = 0; i < arr.length; i += 1) {
     const { index } = arr[i];
-    if (index !== i) {
-      arr[i].index = i;
+    if (index !== i + 1) {
+      arr[i].index = i + 1;
     }
   }
 }
@@ -41,9 +41,9 @@ export function display(arr, parent) {
   rmvBtnList.forEach((element) => {
     element.addEventListener('click', () => {
       arr.splice(element.dataset.id, 1);
+      reOrder(arr);
       localStorage.setItem('Task List', JSON.stringify(arr));
       display(arr, parent);
-      reOrder(arr);
     });
   });
 
@@ -90,7 +90,7 @@ export function addTask(arr, id, parent) {
     const record = {
       description: document.getElementById(id).value,
       completed: false,
-      index: arr.length,
+      index: arr.length + 1,
     };
     arr.push(record);
     localStorage.setItem('Task List', JSON.stringify(arr));
