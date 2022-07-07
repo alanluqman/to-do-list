@@ -48,6 +48,11 @@ html {
   padding: 1.5rem;
   display: flex;
   border-bottom: 1px solid lightblue;
+  transition: all 0.3s ease;
+}
+
+.bg-active {
+  background-color: antiquewhite;
 }
 
 .input {
@@ -57,18 +62,85 @@ html {
   width: 100%;
 }
 
+.checkbox {
+  font-size: 2rem;
+  padding: 1rem 1.2rem;
+  color: lightblue;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: center;
+  border-radius: 50%;
+}
+
+.checkbox:hover {
+  background-color: rgba(238, 216, 144, 0.295);
+}
+
 .icon {
   font-size: 2rem;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   color: lightblue;
   transition: all 0.3s ease;
   cursor: pointer;
   align-self: flex-start;
+  display: none;
+}
+
+.enterIcon {
+  font-size: 2rem;
+  padding: 1rem 1.2rem;
+  color: lightblue;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.enterIcon:hover {
+  color: black;
+}
+
+.visible {
+  display: block;
+}
+
+.edit {
+  font-size: 2rem;
+  padding: 1rem 1.8rem;
+  color: lightblue;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: flex-start;
+  border-radius: 50%;
+}
+
+.edit:hover {
+  color: black;
 }
 
 .header-icon {
-  align-self: flex-end;
+  font-size: 2rem;
+  padding: 1rem 1.17rem;
   color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: flex-end;
+  text-decoration: none;
+  background-color: rgba(0, 255, 255, 0.26);
+  border-radius: 50%;
+}
+
+@keyframes refresh {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-icon:hover {
+  background-color: rgba(0, 255, 255, 0.26);
+  animation: refresh 0.7s 1;
 }
 
 .rotate {
@@ -89,6 +161,12 @@ html {
   font-size: 2.3rem;
   width: 100%;
   align-self: center;
+}
+
+.taskTitle {
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .done {
