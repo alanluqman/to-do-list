@@ -1,6 +1,6 @@
 // import _ from 'lodash';
 import './style.css';
-import { addTask, display } from './crud.js';
+import { addTask, display, removeTask } from './crud.js';
 
 const todo = [];
 
@@ -21,17 +21,16 @@ title.classList = 'header';
 title.innerHTML = 'Today\'s To do';
 headerHolder.appendChild(title);
 
-const form = document.createElement('form');
-form.classList = 'form';
-element.appendChild(form);
+// const form = document.createElement('form');
+// form.classList = 'form';
+// element.appendChild(form);
 
 const inputHolder = document.createElement('div');
 inputHolder.classList = 'input-holder';
-form.appendChild(inputHolder);
+element.appendChild(inputHolder);
 
 const input = document.createElement('input');
 input.id = 'input';
-input.type = 'text';
 input.placeholder = 'Add to your list...';
 input.classList = 'input';
 inputHolder.appendChild(input);
@@ -46,6 +45,12 @@ enterIcon.addEventListener('click', () => {
   display(todo, todoList);
 });
 
+input.addEventListener('keydown', (pressed) =>{
+  if (pressed.key === 'Enter'){
+    addTask(todo, input.id, todoList);
+    display(todo, todoList);
+  }
+});
 const todoList = document.createElement('ul');
 todoList.classList = 'form';
 element.appendChild(todoList);
@@ -81,3 +86,6 @@ const listDelete = document.createElement('a');
 listDelete.classList = 'delete';
 listDelete.innerHTML = 'Clear all completed';
 footer.appendChild(listDelete);
+
+
+

@@ -22,23 +22,41 @@ export function display (arr,parent){
     item.innerHTML = `
                 <i class='  ${complete} icon'></i>
                 <h2 class="${done}">${arr[i].description}</h2>
-                <i class="fa fa-trash icon trash" data-id = ${i}></i>`;
-                // fa-ellipsis-v   
+                <i class="fa fa-trash icon trash" data-id = '${i}'></i>`;
+                // fa-ellipsis-v       
     parent.appendChild(item);
     }
+    const rmvBtnList = document.querySelectorAll('.trash');
+    rmvBtnList.forEach((element) => {
+      element.addEventListener('click', () => {
+        arr.splice(element.dataset.id, 1);
+        console.log('item removed');
+        display(arr,parent);
+        reOrder(arr);
+      });
+    });
 }
 
 export function addTask (arr, id, parent){
-    if (document.getElementById(id).value != ''){
-
-    
+    if (document.getElementById(id).value !== ''){
     const record = {
         description: document.getElementById(id).value,
         completed: false,
         index: arr.length
     };
     arr.push(record);
+    console.log('item '+ record.description+' added with index : '+ record.index);
     display(arr, parent);
     document.getElementById(id).value = '';
+    }
 }
+
+export function reOrder(arr){
+  for (let i = 0; i < arr.length; i += 1) {
+    const index = arr[i].index;
+    if (index !== i){
+      arr[i].index = i;
+    } 
+    console.log('item '+ arr[i].description+' update with index : '+ arr[i].index);
+  }
 }
