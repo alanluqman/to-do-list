@@ -1,6 +1,7 @@
 // import _ from 'lodash';
 import './style.css';
 import { addTask, display } from './crud.js';
+import { removeCompleted } from './check_task';
 
 const todo = [];
 
@@ -57,10 +58,15 @@ const footer = document.createElement('div');
 footer.classList = 'footer';
 element.appendChild(footer);
 
+///// delete all completed tasks
 const listDelete = document.createElement('a');
 listDelete.classList = 'delete';
 listDelete.innerHTML = 'Clear all completed';
+listDelete.addEventListener('click', () => {
+  removeCompleted(todo, todoList);
+});
 footer.appendChild(listDelete);
+
 /// / local storage
 const localStoragetaskList = JSON.parse(localStorage.getItem('Task List'));
 if (localStoragetaskList != null) {
