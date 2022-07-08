@@ -19,14 +19,13 @@ html {
   margin-top: 10%;
   border-radius: 1rem;
   overflow: hidden;
-
-  /* border: 1px solid lightgreen; */
-  box-shadow: 0 0 20px rgba(144, 238, 144, 0.76);
+  box-shadow: 0 0 20px rgb(144, 166, 238);
 }
 
 .header-holder {
-  background-color: lightgreen;
-  width: 100%;
+  background-image: url(./sky.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@ html {
 
 .header {
   font-size: 3rem;
-  color: white;
+  color: orangered;
   text-align: center;
   padding: 5rem 0;
   padding-top: 2rem;
@@ -49,6 +48,11 @@ html {
   padding: 1.5rem;
   display: flex;
   border-bottom: 1px solid lightblue;
+  transition: all 0.3s ease;
+}
+
+.bg-active {
+  background-color: antiquewhite;
 }
 
 .input {
@@ -58,17 +62,85 @@ html {
   width: 100%;
 }
 
+.checkbox {
+  font-size: 2rem;
+  padding: 1rem 1.2rem;
+  color: lightblue;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: center;
+  border-radius: 50%;
+}
+
+.checkbox:hover {
+  background-color: rgba(238, 216, 144, 0.295);
+}
+
 .icon {
   font-size: 2rem;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
+  color: lightblue;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: flex-start;
+  display: none;
+}
+
+.enterIcon {
+  font-size: 2rem;
+  padding: 1rem 1.2rem;
   color: lightblue;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
+.enterIcon:hover {
+  color: black;
+}
+
+.visible {
+  display: block;
+}
+
+.edit {
+  font-size: 2rem;
+  padding: 1rem 1.8rem;
+  color: lightblue;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: flex-start;
+  border-radius: 50%;
+}
+
+.edit:hover {
+  color: black;
+}
+
 .header-icon {
-  align-self: flex-end;
+  font-size: 2rem;
+  padding: 1rem 1.17rem;
   color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: flex-end;
+  text-decoration: none;
+  background-color: rgba(0, 255, 255, 0.26);
+  border-radius: 50%;
+}
+
+@keyframes refresh {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-icon:hover {
+  background-color: rgba(0, 255, 255, 0.26);
+  animation: refresh 0.7s 1;
 }
 
 .rotate {
@@ -77,7 +149,7 @@ html {
 
 .icon:hover {
   color: black;
-  background-color: rgba(144, 238, 144, 0.295);
+  background-color: rgba(238, 216, 144, 0.295);
   border-radius: 50%;
 }
 
@@ -91,18 +163,23 @@ html {
   align-self: center;
 }
 
+.taskTitle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 .done {
   color: rgb(161, 161, 161);
   text-decoration: line-through;
 }
 
-.moveble {
-  cursor: move;
+.trash {
   align-self: center;
 }
 
-.moveble:hover {
-  background-color: white;
+.trash:hover {
+  color: red;
 }
 
 .fa-check {
@@ -110,7 +187,12 @@ html {
 }
 
 .footer {
-  background-color: lightgreen;
+  /* background-image: linear-gradient(0deg, orange, 10%, rgb(146, 206, 255)); */
+  background-image: url(./sky.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
   padding: 3rem 0;
   display: flex;
   justify-content: center;
@@ -119,7 +201,7 @@ html {
 .delete {
   cursor: pointer;
   font-size: 1.8rem;
-  color: lightslategray;
+  color: rgb(201, 131, 1);
   transition: all 0.2s ease;
 }
 
