@@ -19,7 +19,7 @@ html {
   margin-top: 10%;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 20px rgb(144, 166, 238);
+  box-shadow: 0 0 30px rgb(144, 166, 238);
 }
 
 .header-holder {
@@ -52,7 +52,7 @@ html {
 }
 
 .bg-active {
-  background-color: antiquewhite;
+  background-color: rgb(215, 249, 250);
 }
 
 .input {
@@ -65,7 +65,7 @@ html {
 .checkbox {
   font-size: 2rem;
   padding: 1rem 1.2rem;
-  color: lightblue;
+  color: rgb(142, 186, 201);
   transition: all 0.3s ease;
   cursor: pointer;
   align-self: center;
@@ -79,7 +79,7 @@ html {
 .icon {
   font-size: 2rem;
   padding: 1rem 1.2rem;
-  color: lightblue;
+  color: rgb(172, 73, 73);
   transition: all 0.3s ease;
   cursor: pointer;
   align-self: flex-start;
@@ -89,7 +89,7 @@ html {
 .enterIcon {
   font-size: 2rem;
   padding: 1rem 1.2rem;
-  color: lightblue;
+  color: rgb(111, 172, 192);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -105,7 +105,7 @@ html {
 .edit {
   font-size: 2rem;
   padding: 1rem 1.8rem;
-  color: lightblue;
+  color: rgb(101, 167, 189);
   transition: all 0.3s ease;
   cursor: pointer;
   align-self: flex-start;
@@ -114,6 +114,10 @@ html {
 
 .edit:hover {
   color: black;
+}
+
+.hide {
+  display: none;
 }
 
 .header-icon {
@@ -167,6 +171,10 @@ html {
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+.focused {
+  color: rgb(0, 102, 255);
 }
 
 .done {
