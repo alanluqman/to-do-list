@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+# To do list
 
-You can use the [editor on GitHub](https://github.com/alanluqman/to-do-list/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+> This is a web application,  provide user to add daily tasks, check and remove, also it remains in your browsers local storage when you refresh or even close your browser, you will not lose To do list.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Built With
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Html
+- Css
+- JavaScript
 
-```markdown
-Syntax highlighted code block
+**Utilities**
+- Linters
+- Webpack
 
-# Header 1
-## Header 2
-### Header 3
+## Authors
 
-- Bulleted
-- List
+👤 **Alan Luqman**
 
-1. Numbered
-2. List
+- GitHub: [@alanluqman](https://github.com/alanluqman)
+- LinkedIn: [Alan Luqman](https://linkedin.com/in/alan-luqman-61623b17a)
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+## 🤝 Contributing
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Contributions, issues, and feature requests are welcome!
 
-### Jekyll Themes
+Feel free to check the [issues page](../../issues/).
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/alanluqman/to-do-list/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Show your support
 
-### Support or Contact
+Give a ⭐️ if you like this project!
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
