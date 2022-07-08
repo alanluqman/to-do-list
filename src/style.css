@@ -19,7 +19,7 @@ html {
   margin-top: 10%;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 20px rgb(144, 166, 238);
+  box-shadow: 0 0 30px rgb(144, 166, 238);
 }
 
 .header-holder {

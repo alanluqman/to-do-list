@@ -1,9 +1,10 @@
-// import _ from 'lodash';
 import './style.css';
-import { addTask, display } from './crud.js';
-import { removeCompleted } from './check_task';
+import {
+  addTask, display, reOrder, store,
+} from './crud.js';
+import { removeCompleted } from './check_task.js';
 
-const todo = [];
+let todo = [];
 
 const element = document.createElement('div');
 element.classList = 'todo-box';
@@ -58,12 +59,16 @@ const footer = document.createElement('div');
 footer.classList = 'footer';
 element.appendChild(footer);
 
-///// delete all completed tasks
+/// // delete all completed tasks
 const listDelete = document.createElement('a');
 listDelete.classList = 'delete';
 listDelete.innerHTML = 'Clear all completed';
 listDelete.addEventListener('click', () => {
-  removeCompleted(todo, todoList);
+  const clearedList = removeCompleted(todo);
+  todo = [...clearedList];
+  reOrder(todo);
+  store(todo);
+  display(todo, todoList);
 });
 footer.appendChild(listDelete);
 

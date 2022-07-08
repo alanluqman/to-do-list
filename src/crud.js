@@ -1,4 +1,4 @@
-import { checkTask } from "./check_task";
+import { checkTask } from './check_task.js';
 
 export function check(arr, index) {
   if (arr[index].completed) return 'fa fa-check';
@@ -10,12 +10,12 @@ export function ifDone(arr, index) {
   return 'task';
 }
 
-export function ifCheckedTrash(arr, index){
+export function ifCheckedTrash(arr, index) {
   if (arr[index].completed) return 'fa fa-trash icon trash visible';
   return 'fa fa-trash icon trash';
 }
 
-export function ifCheckedEdit(arr, index){
+export function ifCheckedEdit(arr, index) {
   if (arr[index].completed) return 'fa fa-ellipsis-v edit hide';
   return 'fa fa-ellipsis-v edit';
 }
@@ -61,7 +61,7 @@ export function display(arr, parent) {
     });
   });
 
-  ////   update task descriptions function
+  /// /   update task descriptions function
   function updateTask(arr, parent, id, positionID) {
     const updatedText = document.getElementById(id).value;
     if (updatedText !== '') {
@@ -70,7 +70,7 @@ export function display(arr, parent) {
     }
   }
 
-  ////  editing action event listener
+  /// /  editing action event listener
   const editable = document.querySelectorAll('.edit');
   editable.forEach((element) => {
     element.addEventListener('click', () => {
@@ -106,17 +106,19 @@ export function display(arr, parent) {
     });
   });
 
-  ///// check box event listener
+  /// // check box event listener
   const checkboxList = document.querySelectorAll('.checkbox');
   checkboxList.forEach((item) => {
     item.addEventListener('click', () => {
       const itemId = (item.id).charAt((item.id).length - 1);
       checkTask(itemId, arr, parent);
+      store(arr);
+      display(arr, parent);
     });
   });
 }
 
-/////////   addTask function
+/// //////   addTask function
 export function addTask(arr, id, parent) {
   if (document.getElementById(id).value !== '') {
     const record = {
